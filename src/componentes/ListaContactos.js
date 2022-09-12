@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import db from '../firebase/firebaseConfig';
+import Contacto from './Contacto';
 
 const ListaContactos = () => {
     const [contactos, cambiarContactos] = useState([
@@ -15,7 +16,7 @@ const ListaContactos = () => {
         contactos.length > 0 &&
         <ContenedorContactos>
             {contactos.map((contacto) => {
-                return <p key={contacto.id}>{contacto.nombre} - {contacto.correo}</p>
+                return <Contacto key={contacto.id} id={contacto.id} nombre={contacto.nombre} correo={contacto.correo} />
             })}
 
         </ContenedorContactos>
