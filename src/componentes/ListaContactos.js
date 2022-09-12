@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import db from '../firebase/firebaseConfig';
 import Contacto from './Contacto';
+import {collection, onSnapshot} from 'firebase/firestore';
 
 const ListaContactos = () => {
     const [contactos, cambiarContactos] = useState([
@@ -11,6 +12,10 @@ const ListaContactos = () => {
             correo: 'Correo'
         }
     ]);
+
+    useEffect(() => {
+        console.log('hola')
+    }, []);
 
     return ( 
         contactos.length > 0 &&
