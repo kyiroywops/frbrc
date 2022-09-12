@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Formulario from "./componentes/Formulario";
+import ListaContactos from "./componentes/ListaContactos";
 
 const App = () => {
   return ( 
@@ -9,6 +10,7 @@ const App = () => {
         Lista de contactos
       </Titulo>
       <Formulario />
+      <ListaContactos />
 
     </Contenedor>
    );
