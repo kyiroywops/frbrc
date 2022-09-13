@@ -14,7 +14,17 @@ const ListaContactos = () => {
     ]);
 
     useEffect(() => {
-        console.log('hola')
+        onSnapshot(collection(db, 'usuarios'),
+        (snapshot) => {
+            const arregloUsuarios = snapshot.docs.map((documento) => {
+                return {...documento.data(), id: documento.id}
+            })
+            cambiarContactos(arregloUsuarios);
+        },
+        (error) => {
+            console.log(error);
+        }
+        );
     }, []);
 
     return ( 
